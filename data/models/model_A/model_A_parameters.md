@@ -1,0 +1,20 @@
+#### Parameters - Model A (seed_1-26-2022_e)
+nit = 1800                   # number of iterations
+W = 200.0                    # channel width (m)
+D = 6.0                      # channel depth (m)
+depths = D * np.ones((nit,))  # channel depths for different iterations  
+pad = 100                    # padding (number of nodepoints along centerline)
+deltas = 50.0                # sampling distance along centerline           
+Cfs = 0.01015 * np.ones((nit,)) # dimensionless Chezy friction factor
+crdist = 1.5 * W               # threshold distance at which cutoffs occur
+kl = 60.0/(365*24*60*60.0)   # migration rate constant (m/s)
+kv =  1.0e-12               # vertical slope-dependent erosion rate constant (m/s)
+dt = 2*0.05*365*24*60*60.0     # time step (s)
+dens = 1000                  # density of water (kg/m3)
+saved_ts = 10                # which time steps will be saved
+n_bends = 20                # approximate number of bends you want to model
+Sl = 0.0                     # initial slope (matters more for submarine channels than rivers)
+t1 = 500                    # time step when incision starts
+t2 = 700                    # time step when lateral migration starts
+t3 = 1200                    # time step when aggradation starts
+aggr_factor = 2e-9         # aggradation factor (m/s, about 0.18 m/year, it kicks in after t3)
